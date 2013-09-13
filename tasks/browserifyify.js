@@ -32,7 +32,7 @@ module.exports = function(grunt) {
       tokenTo:'___forBrowserify'+Math.random()+'___'
     });
 
-    grunt.file.write(option.file,rename(grunt.file.read(option.file),options.tokenFrom,options.tokenTo));
+    grunt.file.write(options.file,rename(grunt.file.read(option.file),options.tokenFrom,options.tokenTo));
 
       // Print a success message.
       grunt.log.writeln('File "' + f.dest + '" renamed.');
