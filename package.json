@@ -1,7 +1,7 @@
 {
   "name": "grunt-browserifyify",
   "description": "edit out 'require' variables in optimized r.js projects",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "homepage": "https://github.com/calvin/grunt-browserifyify",
   "author": {
     "name": "Calvin Metcalf",
