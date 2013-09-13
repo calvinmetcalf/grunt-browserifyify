@@ -25,7 +25,7 @@ function rename(code,tokenFrom, tokenTo){
 		        semicolons:false,
 		        parentheses:false
 		       }
-		   
+		   }
 		   );
 	}
 module.exports = function(grunt) {
