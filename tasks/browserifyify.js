@@ -18,7 +18,15 @@ function rename(code,tokenFrom, tokenTo){
 		        }
 		    }
 		});
-		return escodegen.generate(ast);
+		return escodegen.generate(ast,{
+		    format:{
+		        escapeless:true,
+		        compact:true,
+		        semicolons:false,
+		        parentheses:false
+		       }
+		   
+		   );
 	}
 module.exports = function(grunt) {
 
@@ -29,7 +37,7 @@ module.exports = function(grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       tokenFrom:'require',
-      tokenTo:'___forBrowserify'+(''+Math.random()).slice(2)+'___'
+      tokenTo:'___bff'+(''+Math.random()).slice(2)+'___'
     });
 
     grunt.file.write(options.file,rename(grunt.file.read(options.file),options.tokenFrom,options.tokenTo));
