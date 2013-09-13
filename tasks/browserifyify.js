@@ -35,7 +35,7 @@ module.exports = function(grunt) {
     grunt.file.write(options.file,rename(grunt.file.read(options.file),options.tokenFrom,options.tokenTo));
 
       // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" renamed.');
+      grunt.log.writeln('File "' + options.file + '" renamed.');
     });
 
 };
