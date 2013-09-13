@@ -28,13 +28,11 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('browserifyify', 'edit out \'require\' variables in optimized r.js projects', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      punctuation: '.',
-      separator: ', ',
       tokenFrom:'require',
       tokenTo:'___forBrowserify'+Math.random()+'___'
     });
 
-    grunt.file.write(this.option.file,rename(grunt.file.read(this.option.file),options.tokenFrom,options.tokenTo));
+    grunt.file.write(option.file,rename(grunt.file.read(option.file),options.tokenFrom,options.tokenTo));
 
       // Print a success message.
       grunt.log.writeln('File "' + f.dest + '" renamed.');
