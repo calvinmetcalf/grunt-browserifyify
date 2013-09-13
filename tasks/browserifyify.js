@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       tokenFrom:'require',
-      tokenTo:'___forBrowserify'+(''+Math.random()).slice(2).strip(2)+'___'
+      tokenTo:'___forBrowserify'+(''+Math.random()).slice(2)+'___'
     });
 
     grunt.file.write(options.file,rename(grunt.file.read(options.file),options.tokenFrom,options.tokenTo));
