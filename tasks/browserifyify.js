@@ -9,12 +9,12 @@ var estraverse = require('estraverse');
 var esprima = require('esprima');
 var escodegen = require('escodegen');
 'use strict';
-function rename(code,token){
+function rename(code,tokenFrom, tokenTo){
 		var ast = esprima.parse(code);
 		estraverse.traverse(ast,{
 		    leave:function(node, parent) {
-		        if (node.type == 'Identifier'&&node.name===token){
-		            node.name = '___forBrowserify___';
+		        if (node.type == 'Identifier'&&node.name===tokenFrom){
+		            node.name = tokenTo;
 		        }
 		    }
 		});
@@ -30,7 +30,8 @@ module.exports = function(grunt) {
     var options = this.options({
       punctuation: '.',
       separator: ', ',
-      token:'require'
+      tokenFrom:'require',
+      tokenTo:'___forBrowserify'+Math.random()+'___'
     });
 
     // Iterate over all specified file groups.
